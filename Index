@@ -1,0 +1,552 @@
+using System;
+using System.Windows.Forms;
+
+namespace Exercicios4OperadoresCalculadora
+{
+    public partial class Calculadora : Form
+    {
+        public Calculadora()
+        {
+            InitializeComponent();
+        }
+
+        private void btnadicao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+                int resultado = Convert.ToInt32(txtValor1.Text) + Convert.ToInt32(txtValor2.Text);
+
+                if (txtResultado.Text == "")
+                {
+                    resultado = (valor1 + valor2);
+
+                    txtResultado.Text = resultado.ToString();
+                }
+                else
+                {
+                    txtResultado.Text = (Convert.ToInt32(txtResultado.Text) + Convert.ToInt32(txtValor2.Text)).ToString();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnsubtracao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+                int resultado = Convert.ToInt32(txtValor1.Text) - Convert.ToInt32(txtValor2.Text);
+
+                if (txtResultado.Text == "")
+                {
+                    resultado = (valor1 - valor2);
+
+                    txtResultado.Text = resultado.ToString();
+                }
+                else
+                {
+                    txtResultado.Text = (Convert.ToInt32(txtResultado.Text) - Convert.ToInt32(txtValor2.Text)).ToString();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnmultiplicacao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+                int resultado = Convert.ToInt32(txtValor1.Text) * Convert.ToInt32(txtValor2.Text);
+
+                if (txtResultado.Text == "")
+                {
+                    resultado = (valor1 * valor2);
+
+                    txtResultado.Text = resultado.ToString();
+                }
+                else
+                {
+                    txtResultado.Text = (Convert.ToInt32(txtResultado.Text) * Convert.ToInt32(txtValor2.Text)).ToString();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btndivisao_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+                int resultado = Convert.ToInt32(txtValor1.Text) / Convert.ToInt32(txtValor2.Text);
+
+                if (txtResultado.Text == "")
+                {
+                    resultado = (valor1 / valor2);
+
+                    txtResultado.Text = resultado.ToString();
+                }
+                else
+                {
+                    txtResultado.Text = (Convert.ToInt32(txtResultado.Text) / Convert.ToInt32(txtValor2.Text)).ToString();
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnIgualA_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                if (valor1 == valor2)
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                else
+                {
+                    txtResultado.Text = "Falso";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnDiferente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                if (valor1 != valor2)
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                else
+                {
+                    txtResultado.Text = "Falso";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnMaiorIgual_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                if (valor1 >= valor2)
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                else
+                {
+                    txtResultado.Text = "Falso";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnMenorIgual_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                if (valor1 <= valor2)
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                else
+                {
+                    txtResultado.Text = "Falso";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                #region Verifica
+                if (valor1 > 0)
+                {
+                    valor1 = 1;
+                }
+                else
+                {
+                    valor1 = 0;
+                }
+
+                if (valor2 > 0)
+                {
+                    valor2 = 1;
+                }
+                else
+                {
+                    valor2 = 0;
+                }
+                #endregion
+
+                if ((valor1 == 1) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 1) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 0) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 0) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Falso";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                #region Verifica
+                if (valor1 > 0)
+                {
+                    valor1 = 1;
+                }
+                else
+                {
+                    valor1 = 0;
+                }
+
+                if (valor2 > 0)
+                {
+                    valor2 = 1;
+                }
+                else
+                {
+                    valor2 = 0;
+                }
+                #endregion
+
+                if ((valor1 == 1) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 1) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 0) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 0) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Falso";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                #region Verifica
+                if (valor1 > 0)
+                {
+                    valor1 = 1;
+                }
+                else
+                {
+                    valor1 = 0;
+                }
+
+                if (valor2 > 0)
+                {
+                    valor2 = 1;
+                }
+                else
+                {
+                    valor2 = 0;
+                }
+                #endregion
+
+                if (valor1 == 1)
+                {
+                    txtResultado.Text = "Valor1: Falso";
+                }
+                else
+                {
+                    txtResultado.Text = "Valor1: Verdadeiro";
+                }
+                if (valor2 == 0)
+                {
+                    txtResultado.Text += "  Valor2: Verdadeiro";
+                }
+                else
+                {
+                    txtResultado.Text += "  Valor2: Falso";
+                }
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnNOR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                #region Verifica
+                if (valor1 > 0)
+                {
+                    valor1 = 1;
+                }
+                else
+                {
+                    valor1 = 0;
+                }
+
+                if (valor2 > 0)
+                {
+                    valor2 = 1;
+                }
+                else
+                {
+                    valor2 = 0;
+                }
+                #endregion
+
+                if ((valor1 == 1) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 1) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 0) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 0) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnNAND_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                #region Verifica
+                if (valor1 > 0)
+                {
+                    valor1 = 1;
+                }
+                else
+                {
+                    valor1 = 0;
+                }
+
+                if (valor2 > 0)
+                {
+                    valor2 = 1;
+                }
+                else
+                {
+                    valor2 = 0;
+                }
+                #endregion
+
+                if ((valor1 == 1) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 1) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 0) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 0) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnXOR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                #region Verifica
+                if (valor1 > 0)
+                {
+                    valor1 = 1;
+                }
+                else
+                {
+                    valor1 = 0;
+                }
+
+                if (valor2 > 0)
+                {
+                    valor2 = 1;
+                }
+                else
+                {
+                    valor2 = 0;
+                }
+                #endregion
+
+                if ((valor1 == 1) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 1) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 0) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 0) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Falso";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BtnXNOR_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int valor1 = Convert.ToInt32(txtValor1.Text);
+                int valor2 = Convert.ToInt32(txtValor2.Text);
+
+                #region Verifica
+                if (valor1 > 0)
+                {
+                    valor1 = 1;
+                }
+                else
+                {
+                    valor1 = 0;
+                }
+
+                if (valor2 > 0)
+                {
+                    valor2 = 1;
+                }
+                else
+                {
+                    valor2 = 0;
+                }
+                #endregion
+
+                if ((valor1 == 1) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+                if ((valor1 == 1) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 0) && (valor2 == 1))
+                {
+                    txtResultado.Text = "Falso";
+                }
+                if ((valor1 == 0) && (valor2 == 0))
+                {
+                    txtResultado.Text = "Verdadeiro";
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("" + erro.Message, "Entrada Inválida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+    }
+}
